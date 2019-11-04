@@ -7,11 +7,11 @@ has_many :attendees, through: :attendances
 
 validates :title, length: { in: 5..140 }, presence: true
 validates :start_date, presence:true
-validate :is_start_date_past?
+validate  :is_start_date_past?
 validates :duration, presence: true, numericality: { only_integer: true }
 validate  :is_duration_correct?
 validates :description, length: { in: 20..1000 }, presence: true
-validates :price, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 1000}
+validates :price, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 1000}
 validates :location, presence:true
 
 
