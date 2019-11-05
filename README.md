@@ -9,6 +9,7 @@ En local tout marche mais sur heroku j'ai une migration qui passe pas et je l'ai
 Sur heroku on peut quand même s'inscrire, recevoir le mail de confirmation et se connecter mais c'est à peu près tout car les routes devises ne sont pas prises en compte.
 Du coup il faudra tester à la fois en local (le seed marche ) pour les routes et fonctionnalités devise ainsi que le front  et sur heroku pour le mailer. Car en local tu ne pourras pas tester le mailer comme tu n'as pas mon login et mdp gmail.
 Tu peux tester avec letter_opener en **décommentant la ligne 6  dans config/environments/development.rb**, après avoir lancé le seed sinon cela va t'ouvrir 100 onglets.
+
 Et tu peux tester le **véritable mailer via l'inscription sur heroku** qui enverra un vrai courriel.
 
 Bref ce sera peut être un peu galère de remplir la grille selon la formulation des questions ! 
