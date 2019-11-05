@@ -13,6 +13,6 @@ Bref ce sera peut être un peu galère de remplir la grille selon la formulation
 
 Pour lancer la version local, comme d'habitude :
 ```
-rails db:drop, rails db:create, rails db:migrate, rails db:seed, rails s
+bundle install, rails db:drop, rails db:create, rails db:migrate, rails db:seed, rails s
 http://localhost:3000/
 ```
