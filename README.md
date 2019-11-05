@@ -11,7 +11,7 @@ Du coup il faudra tester à la fois en local (le seed marche ) pour les routes e
 
 Bref ce sera peut être un peu galère de remplir la grille selon la formulation des questions ! 
 
-comme d'habitude 
+Comme d'habitude :
 ```
 rails db:drop, rails db:create, rails db:migrate, rails db:seed, rails s
 http://localhost:3000/
