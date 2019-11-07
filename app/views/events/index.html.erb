@@ -51,7 +51,7 @@
                 <h2><%=event.title %></h2>
                 <p><%=event.description %> </p>
                 </br>
-                <p> Admin : <%= link_to event.admin.first_name, user_path(event.admin.id) %>
+                <p> Admin : <%=event.admin.first_name %>  <%=event.admin.last_name %>  
 
                 <p class="btn btn-secondary">  <%= link_to "Plus d'info", event_path(event.id) %> &raquo </p>
               </div>

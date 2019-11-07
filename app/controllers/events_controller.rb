@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 	before_action :is_admin, only: [:update, :destroy, :edit]
  
   def show
-    @event = Event.find_by(id:params[:id])
+    @event = Event.find_by(id:params[:id]) 
   end	
 
 		
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
       redirect_to root_path# si ça marche, il redirige vers la page d'index du site
       else
       flash[:notice] = "Formulaire incorrectement rempli"
-      redirect_to new_event_path# sinon, il render la view new (qui est celle sur laquelle on est déjà)
+      render :action => 'new' # sinon, il render la view new (qui est celle sur laquelle on est déjà)
     end
 	
   end
@@ -51,6 +51,24 @@ class EventsController < ApplicationController
 
   end
 
+ def edit
+@event = Event.find(params[:id])
+
+ end
+
+ def update
+    eventparams = params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location)
+    @event = Event.find(params[:id])
+    if @event.update(eventparams)
+    flash[:notice] = "Evenement édité avec succès"
+    redirect_to root_path
+    else
+    flash[:notice] = "L'évenement n'a pas été édité"
+    render :edit
+  end
+ end
+
+
   private
 
 
@@ -59,7 +77,7 @@ class EventsController < ApplicationController
   	@event = Event.find(params[:id])
   	if current_user != @event.admin
   		flash[:error] = "Vous n'êtes pas le créateur de cet évenement !"
-  		redirect_to event_path
+  		redirect_to event_path(@event.id)
   	end
   end
 

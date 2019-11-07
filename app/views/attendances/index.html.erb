@@ -1,0 +1,16 @@
+
+
+
+<h4 class="text-center m-3"> Il y a <%= @event.attendees.ids.count %> participant à votre évenement "<%= @event.title %>".</h4>
+
+
+<p>
+	
+<% @event.attendees.each do |attendee| %>
+	
+<p> <%=  attendee.first_name %> <%=  attendee.last_name %> 
+<br>
+<% end %>
+
+
+</p>
