@@ -1,0 +1,43 @@
+<div style="margin: 5%; text-align: center;	    font-family: 'Permanent Marker', cursive; font-size:2em;" >
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <div style=";color: red;" >
+      <%= label_tag 'Titre' %><br />
+     
+      <%= text_field_tag 'title'%>
+      <br /> 
+      <%= label_tag 'Description' %><br />
+            
+      <%= text_field_tag 'description'%>
+ <br />  
+        <%= label_tag 'prix' %><br />
+       
+      <%= text_field_tag 'price'%>
+       <br /> 
+
+        <%= label_tag 'Date' %><br />
+        <h6>(ex: YYYY-MM-JJ)</h6>
+      <%= text_field_tag 'start_date'%>
+      <br /> 
+
+          <%= label_tag 'Durée (en min)  ' %><br />
+                  <h6>(doit être un multiple de 5)</h6>
+
+      <%= text_field_tag 'duration'%>
+ <br />  
+          <%= label_tag 'Lieu' %><br />
+                  
+      <%= text_field_tag 'location'%>
+      <br /> <br /> 
+      <%= submit_tag "Creer" %>
+
+    <% end %>
+  </div>
+
+   <% if flash[:notice] %>
+  <div class="alert alert-dismissible alert-danger">
+    <div class="notice"><strong><%= flash[:notice] %></strong>
+     </div>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+<% end %>
+    <!-- ... -->

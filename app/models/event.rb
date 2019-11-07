@@ -17,7 +17,7 @@ validates :location, presence:true
 
 #Check if not in past
 def is_start_date_past?
-		if start_date < Time.now
+		if start_date != nil && start_date < Time.now
 			errors.add(:start_date, "can't be in the past")
 		end
 	end
@@ -26,7 +26,7 @@ def is_start_date_past?
 
 #Check if multiple of 5
 def is_duration_correct?
-		if duration <= 0 || (duration % 5) != 0 
+		if duration !=nil && (duration <= 0 || (duration % 5) != 0 )
 			errors.add(:duration, "duration must be a positive number and a multiple of 5 !")
 		end			
 	end

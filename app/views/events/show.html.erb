@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>thpEventBrite</title>
+</head>
+<body style="background-image: ;">
+<center>
+	<div class="card" style="	background-image: 
+  <img src="" class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 style="font-size: 5em;" class="card-title"><%= @event.title %></h5>
+
+    <p style="text-align: center;font-size: 1.2em;;"> By <%= @event.admin.first_name %> </p>
+    <p  style="text-align: center;" class="card-text"> <%= @event.description %></p>
+     <p style="text-align: center;font-size: 1.2em;;"> Créé le :</p> <%= @event.created_at %> <br/>
+     <p style="text-align: center;font-size: 1.2em;;"> Prix: <%= @event.price %> €</p>
+        <p style="text-align: center;font-size: 1.2em;;"> Aura lieu le <%= @event.start_date %> </p>
+        <p style="text-align: center;font-size: 1.2em;;"> Pendant <%= @event.duration %> minutes </p>
+     <br/>
+       <p style="text-align: center;font-size: 1.2em;;"> Email du créateur </br>  <%= @event.admin.email %></p>
+
+        
+			<% if current_user != @event.admin  %>
+
+			<% else %>
+			<p  style="color: white; font-size: 1em; border-radius: 20px;" class="btn btn-warning" >  <%= link_to "Profil",user_path %>  </p>
+
+			<p  style="color: white; font-size: 1em; border-radius: 20px;" class="btn btn-danger" >  <%= link_to "Supprimer", event_path(@event.id),method: :delete %>  </p>
+
+				
+		<% end %>
+
+     
+
+   
+
+  </div>
+</div>
+</center>
+
+</body>
+</html>
