@@ -3,6 +3,8 @@ class Event < ApplicationRecord
 belongs_to :admin, class_name: "User"
 has_many :attendances
 has_many :attendees, through: :attendances
+has_one_attached :event_picture
+#event.event_picture.attached?
 
 
 validates :title, length: { in: 5..140 }, presence: true

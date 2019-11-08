@@ -1,5 +1,5 @@
 <div style="margin: 5%; text-align: center;	    font-family: 'Permanent Marker', cursive; font-size:2em;" >
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <%= form_tag url_for(action: 'create'), method: "post", multipart: "true" do %>
     <div style=";color: red;" >
       <%= label_tag 'Titre' %><br />
      
@@ -28,7 +28,12 @@
                   
       <%= text_field_tag 'location'%>
       <br /> <br /> 
-      <%= submit_tag "Creer" %>
+
+      <p> Ajoutez une photo à votre évenement </p>
+      <%= file_field_tag :event_picture %>
+
+      <br /> <br />
+      <%= submit_tag "Créer" %>
 
     <% end %>
   </div>

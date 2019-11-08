@@ -9,6 +9,12 @@
   <img src="" class="card-img-top" alt="">
   <div class="card-body">
     <h5 style="font-size: 5em;" class="card-title"><%= @event.title %></h5>
+  
+<%if @event.event_picture.attached?%>
+  <%= image_tag @event.event_picture, alt: 'event_picture' %>
+<%else%>
+  <p> Il n'y a pas encore d'image liée à cet évenement </p>
+<%end%>
 
     <p style="text-align: center;font-size: 1.2em;;"> By <%= @event.admin.first_name %> </p>
     <p  style="text-align: center;" class="card-text"> <%= @event.description %></p>
@@ -25,12 +31,20 @@
          <% end %>
 
        <% if is_event_admin?(@event.admin) %>
+
+
     
       <p  style="color: white; font-size: 1em; border-radius: 20px;" class="btn btn-danger" >  <%= link_to "Supprimer", event_path(@event.id),method: :delete %>  </p>
 
       <p  style="color: white; font-size: 1em; border-radius: 20px;" class="btn btn-outline-primary"></button>  <%= link_to "Editer", edit_event_path(:id => @event.id)%></p>
 
        <p  style="color: white; font-size: 1em; border-radius: 20px;" class="btn btn-light" >  <%= link_to "Liste des inscrits", event_attendances_path(@event.id)%></p>
+
+       <h3>Changer l'image de l'évenement ?</h3>
+        <%= form_tag  event_pictures_path(@event.id), multipart: true do %>
+        <%= file_field_tag :event_picture %>
+        <%= submit_tag "mettre à jour" %>
+        <% end %>
 
 
      

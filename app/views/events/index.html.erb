@@ -35,7 +35,9 @@
         <div class="container">
           <h1 class="display-3">Thp Brite!</h1>
           <p>Ceci est la page d'accueil du clone THP d'Eventbrite</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+           <% if current_user  %>
+          <p> <%= link_to " Créer un événement " "&raquo;".html_safe, new_event_path, :class => "btn btn-primary btn-lg", :role => "button"  %> </p>
+          <%  end  %>
         </div>
       </div>
 

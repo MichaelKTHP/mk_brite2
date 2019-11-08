@@ -28,7 +28,15 @@ class EventsController < ApplicationController
      duration: params["duration"])
      @event.admin = current_user
 
+    
+
+
+
       if @event.save # essaie de sauvegarder en base @gossip
+      puts "xxxxxxxxxx"
+      puts params[:event_picture]
+      puts "xxxxxxxxxx"
+      @event.event_picture.attach(params[:event_picture])
       flash[:notice] = "Event successfully created"
       redirect_to root_path# si ça marche, il redirige vers la page d'index du site
       else
