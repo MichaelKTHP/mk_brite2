@@ -105,12 +105,21 @@
         <h4> Créez vos evenements, rejoignez ceux des autres, payez en toute sécurité !</h4>  
         <h4>Brite : Peu importe l'état de vos dents, nous allons vous donner le sourire !</h4>
       </div>
-       <%unless current_user%>
+
+       <%if current_user %>
       <div class="col-md-3">
-         <%= link_to "Inscrivez-vous dès maintenant !",new_user_path, :class =>"btn btn-lg btn-secondary btn-block"  %>
+         <%= link_to "Créez un évenement dès maintenant !",new_event_path, :class =>"btn btn-lg btn-success btn-block"  %>
+      
+      </div>
+     
+
+       <%else %>
+      <div class="col-md-3">
+         <%= link_to "Inscrivez-vous dès maintenant !",new_user_path, :class =>"btn btn-lg btn-success btn-block"  %>
       
       </div>
       <%end%>
+
     </div>
     </div>
 
