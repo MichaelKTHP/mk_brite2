@@ -5,7 +5,7 @@
 </head>
 <body style="background-image: ;">
 <center>
-	<div class="card" style="	background-image: 
+	<div class="card" style=""	background-image: >
   <img src="" class="card-img-top" alt="">
   <div class="card-body">
     <h5 style="font-size: 5em;" class="card-title"><%= @event.title %></h5>
@@ -21,6 +21,8 @@
      <p style="text-align: center;font-size: 1.2em;;"> Créé le :</p> <%= @event.created_at %> <br/>
      <p style="text-align: center;font-size: 1.2em;;"> Prix: <%= @event.price %> €</p>
         <p style="text-align: center;font-size: 1.2em;;"> Aura lieu le <%= @event.start_date %> </p>
+          <p style="text-align: center;font-size: 1.2em;;"> Lieu : <%= @event.location %> </p>
+     <br/>
         <p style="text-align: center;font-size: 1.2em;;"> Pendant <%= @event.duration %> minutes </p>
      <br/>
        <p style="text-align: center;font-size: 1.2em;;"> Email du créateur </br>  <%= @event.admin.email %></p>
@@ -49,7 +51,7 @@
        <h3>Changer l'image de l'évenement ?</h3>
         <%= form_tag  event_pictures_path(@event.id), multipart: true do %>
         <%= file_field_tag :event_picture %>
-        <%= submit_tag "mettre à jour" %>
+        <%= submit_tag "Mettre à jour" %>
 
         
      
