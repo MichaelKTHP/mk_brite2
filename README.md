@@ -3,7 +3,7 @@ https://brite2.herokuapp.com/
 Clone du site Eventbrite codé en ruby on rails.
 
 - Stripe installé
-- Ahout d'images pour les évenements installé via ActiveRecord 
+- Ajout d'images pour les évenements installé via ActiveRecord 
 - Theme bootstrap installé sur la page d'accueil via Asset Pipeline
 _________________
 
