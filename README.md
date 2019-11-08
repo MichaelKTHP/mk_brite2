@@ -1,16 +1,18 @@
 https://brite2.herokuapp.com/
 
 Clone du site Eventbrite codé en ruby on rails.
-Stripe installé
-Images via ActiveRecord installé
-Theme bootstrap installé sur la page d'accueil via Asset Pipeline
+
+- Stripe installé
+- Ahout d'images pour les évenements installé via ActiveRecord 
+- Theme bootstrap installé sur la page d'accueil via Asset Pipeline
 _________________
 
 A faire 
-Modif infos profil (prénom/nom/description)
-Evenements gratuit
-Theme bootstrap sur toutes les pages
-Espace admin
+- Modif infos profil (prénom/nom/description)
+- Evenements gratuit
+- Photo profil utilisateur
+- Theme bootstrap sur toutes les pages
+- Espace admin
 
 
 _________________
